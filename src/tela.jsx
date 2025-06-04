@@ -6,19 +6,19 @@ class Tela extends Component{
         return( 
             <View style={styles.container}>
                 <View style={styles. divisao}>
-                    
+                    <Text>teste</Text>
+                </View >
+
+                <View style={styles. divisao}>
+                     <Text>teste</Text>
                 </View>
 
-                <View>
-
+                <View style={styles. divisao}>
+                    <Text>teste</Text>
                 </View>
 
-                <View>
-
-                </View>
-
-                <View>
-
+                <View style={styles. divisao}>
+                    <Text>teste</Text>
                 </View>
             </View>
         )
@@ -29,6 +29,18 @@ export default Tela;
 
 const styles= StyleSheet.create({
     container: {
-        backgroundColor: 'black';
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        backgroundColor: 'black',
+        marginBottom: 50,
+    },
+
+    divisao:{
+        borderWidth: 1,
+        borderColor: '#4169e1',
+        height: 100,
+        width: 150,
+        marginBottom: 20,
     }
 });
