@@ -1,9 +1,10 @@
 
-import Tela from './src/tela';
+import TelaInicial from './src/telaInicial';
+import Tela from './src/telaInicial';
 
 export default function App() {
   return (
-    <Tela/>
+    <TelaInicial/>
   );
 }
 
