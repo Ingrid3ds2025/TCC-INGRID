@@ -60,11 +60,16 @@ class TelaInicial extends Component {
             
             <View style={styles.menuContent}>
               <Text style={styles.menuItem}>
-                  Opção 1
-                </Text>
-              <Text style={styles.menuItem}>Opção 2</Text>
-              <Text style={styles.menuItem}>Opção 3</Text>
-              <Text style={styles.menuItem}>Opção 4</Text>
+                  Sobre seu produto
+              </Text>
+
+              <Text style={styles.menuItem}>
+                  Relatório Geral
+              </Text>
+
+              <Text style={styles.menuItem}>
+                  Descrição da Área
+              </Text>
             </View>
           </View>
         )}
@@ -78,19 +83,19 @@ class TelaInicial extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'black'
+    backgroundColor: 'black',
+    padding:10
   },
   conteudo1: {
     flex: 1,
     width: '100%',
     alignItems: 'flex-end',
-    paddingTop: 50, // Espaço para o menu e temperatura
   },
   iconeMenu: {
     fontSize: 50,
     color: 'green',
     marginRight: 20,
-    marginTop: 20,
+    marginTop: 10
   },
   containerTemperatura: {
     width: '100%',
@@ -99,14 +104,15 @@ const styles = StyleSheet.create({
     marginTop: 20, // Espaço entre o menu e a temperatura
   },
   textoTempo: {
-    fontSize: 30,
+    fontSize: 20,
     color: 'white',
   },
   conteudo2: {
     flex: 1,
     width: '100%',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 0
   },
 
   textoUmidade: {
@@ -124,7 +130,7 @@ const styles = StyleSheet.create({
   },
 
   textoIrrigacao: {
-    fontSize: 20,
+    fontSize: 15,
     color: 'white',
     marginTop: 0,
   },
@@ -133,7 +139,8 @@ const styles = StyleSheet.create({
     flex: 1,
     width: '100%',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 40
   },
   menuFullscreen: {
     position: 'absolute',
