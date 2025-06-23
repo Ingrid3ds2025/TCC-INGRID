@@ -20,7 +20,7 @@ class SobreProduto extends Component {
             <Text style={styles.conteudo2}>n° 01</Text>
 
             <Text style={styles.subtitulo}>Características</Text>
-            <Text style={styles.conteudo2}>Lorem ipsum dolor, sit amet  doloremccusamus cumulpa expedita amet cum deleniti?</Text>
+            <Text style={styles.descricao}>Lorem ipsum dolor, sit amet  doloremccusamus cumulpa expedita amet cum deleniti?</Text>
         </View>
       </View>
     );
@@ -33,12 +33,43 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'black',
+    padding: 10
+  },
+
+  conteudo:{
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'black',
+    
   },
 
   titulo: {
     color: 'white',
     fontSize: 40,
-    fontWeight: '600'
+    fontWeight: '600',
+    marginTop: 20,
+
+  },
+
+  subtitulo:{
+    color: 'green',
+    fontSize: 25,
+    fontWeight: '700'
+  },
+
+  conteudo2:{
+    color: 'white',
+    marginTop: 5,
+    fontSize: 15,
+    marginBottom: 30
+  },
+
+  descricao:{
+    color: 'white',
+    marginTop: 5,
+    fontSize: 15,
+    marginLeft: 20
   }
 });
 
