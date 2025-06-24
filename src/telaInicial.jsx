@@ -1,12 +1,5 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Dimensions, Image } from 'react-native';
-import { TextInput } from 'react-native-web';
-import {NavigationContainer } from '@react-navigation/native';
-import {createNativeStackNavigator } from '@react-navigation/native'; 
-import SobreProduto from './sobreProduto';
-
-
-const Stack = createNativeStackNavigator(); 
 
 class TelaInicial extends Component {
   constructor(props) {
@@ -67,23 +60,30 @@ class TelaInicial extends Component {
             
             <View style={styles.menuContent}>
 
-              <NavigationContainer>
-                <Stack.Navigation> 
-                  <Stack.Screen name="SobreOProduto" Component={TelaInicial}/>
-                </Stack.Navigation> 
-              </NavigationContainer>
+             <TouchableOpacity 
+                  style={styles.menuItemButton} 
+                  onPress={() => {
+                    this.toggleMenu(); 
+                    this.props.navigation.navigate('SobreProduto');}}>
+                <Text style={styles.menuItem}>Sobre Produto</Text>
+             </TouchableOpacity>
 
-              <Text style={styles.menuItem}>
-                  Sobre seu produto
-              </Text>
+             <TouchableOpacity 
+                  style={styles.menuItemButton} 
+                  onPress={() => {
+                    this.toggleMenu(); 
+                    this.props.navigation.navigate('RelatorioGeral');}}>
+                <Text style={styles.menuItem}>Relatório Geral</Text>
+             </TouchableOpacity>
 
-              <Text style={styles.menuItem}>
-                  Relatório Geral
-              </Text>
-
-              <Text style={styles.menuItem}>
-                  Descrição da Área
-              </Text>
+             <TouchableOpacity 
+                  style={styles.menuItemButton} 
+                  onPress={() => {
+                    this.toggleMenu(); 
+                    this.props.navigation.navigate('DescricaoArea');}}>
+                <Text style={styles.menuItem}>Descrição da Area</Text>
+             </TouchableOpacity>
+             
             </View>
           </View>
         )}
