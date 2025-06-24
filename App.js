@@ -4,8 +4,8 @@ import TelaInicial from './src/telaInicial';
 
 export default function App() {
   return (
-    //<TelaInicial/>
-    <SobreProduto/>
+    <TelaInicial/>
+    // <SobreProduto/>
   );
 }
 

@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Dimensions, Image } from 'react-native';
 import { TextInput } from 'react-native-web';
+import {NavigationContainer } from '@react-navigation/native';
+import {createNativeStackNavigator } from '@react-navigation/native'; 
+import SobreProduto from './sobreProduto';
+
+
+const Stack = createNativeStackNavigator(); 
 
 class TelaInicial extends Component {
   constructor(props) {
@@ -13,6 +19,7 @@ class TelaInicial extends Component {
   toggleMenu = () => {
     this.setState({ menuAberto: !this.state.menuAberto });
   };
+
 
   render() {
     const { width, height } = Dimensions.get('window');
@@ -59,6 +66,13 @@ class TelaInicial extends Component {
             </TouchableOpacity>
             
             <View style={styles.menuContent}>
+
+              <NavigationContainer>
+                <Stack.Navigation> 
+                  <Stack.Screen name="SobreOProduto" Component={TelaInicial}/>
+                </Stack.Navigation> 
+              </NavigationContainer>
+
               <Text style={styles.menuItem}>
                   Sobre seu produto
               </Text>
