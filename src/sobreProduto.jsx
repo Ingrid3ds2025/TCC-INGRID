@@ -5,10 +5,6 @@ class SobreProduto extends Component {
   render() {
     return (
       <View style={styles.container}>
-
-        {/* Titulo */}
-        <Text style={styles.titulo}>Sobre o Produto</Text>
-
         <View style={styles.conteudo}>
             <Text style={styles.subtitulo}>Nome do Produto</Text>
             <Text style={styles.conteudo2}>Nome do Produto</Text>
