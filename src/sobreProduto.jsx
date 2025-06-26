@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'black',
-    marginTop: 40,
+    marginTop: 70,
     marginBottom: 0
   },
 

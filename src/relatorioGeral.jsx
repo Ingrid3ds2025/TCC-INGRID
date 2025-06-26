@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Image } from 'react-native';
 
 class RelatorioGeral extends Component {
   render() {
@@ -30,7 +30,15 @@ class RelatorioGeral extends Component {
         {/*GRÁFICO */}
 
         <View style={styles.grafico}>
-            <Text>Irrigação Realizada em 3 meses </Text>
+            <Text style={styles.textIrrigacao}>Irrigação Realizada em 3 meses </Text>
+
+            {/*GRAFICO AQUI */}
+            <Image 
+              source={require('../imagens/graficoIlustrativo.png')}
+              style={{ width: 300, height: 300}}
+            />
+        
+            <Text style={styles.textRepresentacao}>Representação Gráfica</Text>
         </View>
 
       </View>
@@ -42,8 +50,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'black',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start', // <-- importante para deixar os filhos no início horizontalmente
+    justifyContent: 'center',
+    alignItems: 'center', // <-- importante para deixar os filhos no início horizontalmente
     padding: 20
   },
 
@@ -70,6 +78,26 @@ const styles = StyleSheet.create({
   dado:{
     color: 'white',
     fontSize: 20,
+  },
+
+  grafico:{
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    marginTop: 30
+  },
+
+  textIrrigacao:{
+    color: 'white',
+    fontSize: 15,
+    fontWeight: '600',
+    marginBottom: 20
+  },
+
+  textRepresentacao:{
+    color: 'white',
+    marginTop: 20,
+    marginBottom: 40
   }
 });
 

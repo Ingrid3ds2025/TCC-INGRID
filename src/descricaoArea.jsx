@@ -5,7 +5,42 @@ class DescricaoArea extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>DescricaoArea</Text>
+        <View style={styles.campo}>
+                    <View> 
+                        <Text style={styles.subtitulo}>Área:</Text>
+                        <Text style={styles.dado}>Dado</Text>
+                    </View>
+        
+                    <View style={styles.campo}>
+                        <Text style={styles.subtitulo}>Tamanho:</Text>
+                        <Text style={styles.dado}>Dado</Text>
+                    </View>
+        
+                    <View style={styles.campo}>
+                        <Text style={styles.subtitulo}>Cultivo:</Text>
+                        <Text style={styles.dado}>Dado</Text>
+                    </View>
+        
+                    <View style={styles.campo}>
+                        <Text style={styles.subtitulo}>Localização:</Text>
+                        <Text style={styles.dado}>Dado</Text>
+                    </View>
+
+                    <View style={styles.campo}>
+                        <Text style={styles.subtitulo}>Sensores:</Text>
+                        <Text style={styles.dado}>Dado</Text>
+                    </View>
+
+                    <View style={styles.campo}>
+                        <Text style={styles.subtitulo}>Instalação:</Text>
+                        <Text style={styles.dado}>Dado</Text>
+                    </View>
+
+                    <View style={styles.campo}>
+                        <Text style={styles.subtitulo}>Responsável:</Text>
+                        <Text style={styles.dado}>Dado</Text>
+                    </View>      
+        </View>
       </View>
     );
   }
