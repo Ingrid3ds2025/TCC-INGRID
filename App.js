@@ -23,7 +23,7 @@ export default function App() {
                name="SobreProduto" 
                component={SobreProduto}
                options={{
-                 title: 'Sobre o Produto',
+                 title: 'SOBRE O PRODUTO',
                  headerStyle: {
                    backgroundColor: 'black',
                  },
@@ -39,7 +39,7 @@ export default function App() {
                name="RelatorioGeral" 
                component={RelatorioGeral}
                options={{
-                 title: 'Relatório Geral',
+                 title: 'RELATÓRIO GERAL',
                  headerStyle: {
                    backgroundColor: 'black',
                  },
@@ -55,7 +55,7 @@ export default function App() {
                name="DescricaoArea" 
                component={DescricaoArea}
                options={{
-                 title: 'Descrição da Área',
+                 title: 'DESCRIÇÃO DA ÁREA',
                  headerStyle: {
                    backgroundColor: 'black',
                  },
