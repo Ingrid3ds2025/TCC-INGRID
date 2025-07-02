@@ -12,68 +12,68 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
 
-        // <NavigationContainer>
-        //   <Stack.Navigator> 
-        //     <Stack.Screen 
-        //       name="TelaInicial" 
-        //       component={TelaInicial}
-        //        options={{headerShown: false}}
-        //      />
+         <NavigationContainer>
+           <Stack.Navigator> 
+             <Stack.Screen 
+               name="TelaInicial" 
+               component={TelaInicial}
+                options={{headerShown: false}}
+              />
 
-        //      <Stack.Screen 
-        //        name="SobreProduto" 
-        //        component={SobreProduto}
-        //        options={{
-        //          title: 'SOBRE O PRODUTO',
-        //          headerStyle: {
-        //            backgroundColor: 'black',
-        //          },
-        //          headerTintColor: 'white',
-        //          headerTitleStyle: {
-        //            fontWeight: 'bold',
-        //          },
+              <Stack.Screen 
+                name="SobreProduto" 
+                component={SobreProduto}
+                options={{
+                  title: 'SOBRE O PRODUTO',
+                  headerStyle: {
+                    backgroundColor: 'black',
+                  },
+                  headerTintColor: 'white',
+                  headerTitleStyle: {
+                    fontWeight: 'bold',
+                  },
 
-        //        }}
-        //      />
+                }}
+              />
 
-        //      <Stack.Screen 
-        //        name="RelatorioGeral" 
-        //        component={RelatorioGeral}
-        //        options={{
-        //          title: 'RELATÓRIO GERAL',
-        //          headerStyle: {
-        //            backgroundColor: 'black',
-        //          },
-        //          headerTintColor: 'white',
-        //          headerTitleStyle: {
-        //            fontWeight: 'bold',
-        //          },
+              <Stack.Screen 
+                name="RelatorioGeral" 
+                component={RelatorioGeral}
+                options={{
+                  title: 'RELATÓRIO GERAL',
+                  headerStyle: {
+                    backgroundColor: 'black',
+                  },
+                  headerTintColor: 'white',
+                  headerTitleStyle: {
+                    fontWeight: 'bold',
+                  },
 
-        //        }}
-        //      />
+                }}
+              />
 
-        //      <Stack.Screen 
-        //        name="DescricaoArea" 
-        //        component={DescricaoArea}
-        //        options={{
-        //          title: 'DESCRIÇÃO DA ÁREA',
-        //          headerStyle: {
-        //            backgroundColor: 'black',
-        //          },
-        //          headerTintColor: 'white',
-        //          headerTitleStyle: {
-        //            fontWeight: 'bold',
-        //          },
+              <Stack.Screen 
+                name="DescricaoArea" 
+                component={DescricaoArea}
+                options={{
+                  title: 'DESCRIÇÃO DA ÁREA',
+                  headerStyle: {
+                    backgroundColor: 'black',
+                  },
+                  headerTintColor: 'white',
+                  headerTitleStyle: {
+                    fontWeight: 'bold',
+                  },
 
-        //        }}
-        //      />
-        //    </Stack.Navigator> 
-        // </NavigationContainer>
+                }}
+              />
+            </Stack.Navigator> 
+         </NavigationContainer>
 
-    //    <SobreProduto/>
-    //  <RelatorioGeral/>
+    //     <SobreProduto/>
+    //   <RelatorioGeral/>
 
-    <ConfigurarSensor/>
+    // <ConfigurarSensor/>
   );
 }
 
