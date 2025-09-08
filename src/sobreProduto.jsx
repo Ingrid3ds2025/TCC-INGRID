@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
 
 class SobreProduto extends Component {
   render() {
+    
     return (
       <View style={styles.container}>
         <View style={styles.conteudo}>
