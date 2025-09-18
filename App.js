@@ -2,7 +2,7 @@ import React from 'react';
 import {NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TelaInicial from './src/telaInicial';
-import SobreProduto from './src/sobreProduto';
+import PerfilUsuario from './src/perfilUsuario';
 import RelatorioGeral from './src/relatorioGeral';
 import DescricaoArea from './src/descricaoArea';
 import ConfigurarSensor from './src/configurarSensor';
@@ -21,8 +21,8 @@ export default function App() {
               />
 
               <Stack.Screen 
-                name="SobreProduto" 
-                component={SobreProduto}
+                name="PerfilUsuario" 
+                component={PerfilUsuario}
                 options={{
                   title: 'SOBRE O PRODUTO',
                   headerStyle: {
@@ -70,7 +70,7 @@ export default function App() {
             </Stack.Navigator> 
          </NavigationContainer>
 
-    //     <SobreProduto/>
+    //     <PerfilUsuario/>
     //   <RelatorioGeral/>
 
     // <ConfigurarSensor/>

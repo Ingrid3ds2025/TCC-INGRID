@@ -92,12 +92,14 @@ class TelaInicial extends Component {
             </TouchableOpacity>
             
             <View style={styles.menuContent}>
+           
+
               <TouchableOpacity 
                   style={styles.menuItemButton} 
                   onPress={() => {
                     this.toggleMenu(); 
-                    this.props.navigation.navigate('SobreProduto');}}>
-                <Text style={styles.menuItem}>Sobre Produto</Text>
+                    this.props.navigation.navigate('PerfilUsuario');}}>
+                <Text style={styles.menuItem}>Perfil</Text>
               </TouchableOpacity>
 
               <TouchableOpacity 
@@ -108,13 +110,7 @@ class TelaInicial extends Component {
                 <Text style={styles.menuItem}>Relatório Geral</Text>
               </TouchableOpacity>
 
-              <TouchableOpacity 
-                  style={styles.menuItemButton} 
-                  onPress={() => {
-                    this.toggleMenu(); 
-                    this.props.navigation.navigate('DescricaoArea');}}>
-                <Text style={styles.menuItem}>Descrição da Area</Text>
-              </TouchableOpacity>
+             
             </View>
           </View>
         )}

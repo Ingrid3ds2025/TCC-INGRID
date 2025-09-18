@@ -1,29 +1,64 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
+import { db } from './firebaseConfig';
+import { ref, onValue } from "firebase/database";
 
 class RelatorioGeral extends Component {
+
+  constructor(props) {
+      super(props);
+      this.state = {
+        menuAberto: false,
+        temperatura: '--',
+        umidade: '--',
+        chuva: false,
+      };
+    }
+  
+    componentDidMount() {
+      // Listener para Temperatura
+      onValue(ref(db, 'sensores/temperatura'), (snapshot) => {
+        if (snapshot.exists()) {
+          this.setState({ temperatura: snapshot.val() });
+        }
+      });
+  
+      // Listener para Umidade
+      onValue(ref(db, 'sensores/umidade'), (snapshot) => {
+        if (snapshot.exists()) {
+          this.setState({ umidade: snapshot.val() });
+        }
+      });
+  
+      //Ligação para chuva
+      onValue(ref(db, 'sensores/chuva'), (snapshot) => {
+        if(snapshot.exists()){
+          this.state({chuva: snapshot.val()});
+        }
+      })
+    }
+  
+  s
   render() {
+
+    
+    const { temperatura, umidade, chuva } = this.state;
     return (
       <View style={styles.container}>
         <View style={styles.informacoes}>
             <View style={styles.campo}>
                 <Text style={styles.subtitulo}>Umidade do solo:</Text>
-                <Text style={styles.dado}>Dado</Text>
+                <Text style={styles.dado}>{umidade} %</Text>
             </View>
 
             <View style={styles.campo}>
                 <Text style={styles.subtitulo}>Temperatura:</Text>
-                <Text style={styles.dado}>Dado</Text>
+                <Text style={styles.dado}>{temperatura} °C</Text>
             </View>
 
             <View style={styles.campo}>
                 <Text style={styles.subtitulo}>Chuva:</Text>
-                <Text style={styles.dado}>Dado</Text>
-            </View>
-
-            <View style={styles.campo}>
-                <Text style={styles.subtitulo}>Luz solar:</Text>
-                <Text style={styles.dado}>Dado</Text>
+                <Text style={styles.dado}>{chuva ? 'Chovendo' : 'Sem presença de chuva'}</Text>
             </View>
         </View>
 
