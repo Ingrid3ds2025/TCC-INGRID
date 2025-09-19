@@ -1,79 +1,20 @@
 import React from 'react';
 import {NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import TelaInicial from './src/telaInicial';
-import PerfilUsuario from './src/perfilUsuario';
-import RelatorioGeral from './src/relatorioGeral';
-import DescricaoArea from './src/descricaoArea';
-import ConfigurarSensor from './src/configurarSensor';
+
+import Routes from './src/routes';
+
 
 const Stack = createNativeStackNavigator(); 
 
 export default function App() {
   return (
 
-         <NavigationContainer>
-           <Stack.Navigator> 
-             <Stack.Screen 
-               name="TelaInicial" 
-               component={TelaInicial}
-                options={{headerShown: false}}
-              />
-
-              <Stack.Screen 
-                name="PerfilUsuario" 
-                component={PerfilUsuario}
-                options={{
-                  title: 'SOBRE O PRODUTO',
-                  headerStyle: {
-                    backgroundColor: 'black',
-                  },
-                  headerTintColor: 'white',
-                  headerTitleStyle: {
-                    fontWeight: 'bold',
-                  },
-
-                }}
-              />
-
-              <Stack.Screen 
-                name="RelatorioGeral" 
-                component={RelatorioGeral}
-                options={{
-                  title: 'RELATÓRIO GERAL',
-                  headerStyle: {
-                    backgroundColor: 'black',
-                  },
-                  headerTintColor: 'white',
-                  headerTitleStyle: {
-                    fontWeight: 'bold',
-                  },
-
-                }}
-              />
-
-              <Stack.Screen 
-                name="DescricaoArea" 
-                component={DescricaoArea}
-                options={{
-                  title: 'DESCRIÇÃO DA ÁREA',
-                  headerStyle: {
-                    backgroundColor: 'black',
-                  },
-                  headerTintColor: 'white',
-                  headerTitleStyle: {
-                    fontWeight: 'bold',
-                  },
-
-                }}
-              />
+          <NavigationContainer>
+            <Stack.Navigator> 
+              <Routes/>
             </Stack.Navigator> 
-         </NavigationContainer>
-
-    //     <PerfilUsuario/>
-    //   <RelatorioGeral/>
-
-    // <ConfigurarSensor/>
+          </NavigationContainer>
   );
 }
 
