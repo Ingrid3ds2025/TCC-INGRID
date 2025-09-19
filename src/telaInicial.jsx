@@ -109,7 +109,6 @@ class TelaInicial extends Component {
                     this.props.navigation.navigate('RelatorioGeral');}}>
                 <Text style={styles.menuItem}>Relatório Geral</Text>
               </TouchableOpacity>
-
              
             </View>
           </View>

@@ -1,95 +1,68 @@
 import React from 'react';
-import {NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import TelaInicial from './src/telaInicial';
-import PerfilUsuario from './src/perfilUsuario';
-import RelatorioGeral from './src/relatorioGeral';
+import TelaInicial from '../telaInicial';  // Certifique-se de que o caminho está correto
+import PerfilUsuario from '../perfilUsuario';
+import RelatorioGeral from '../relatorioGeral';
 import Welcome from '../pages/welcome/bemVindo';
 import SingIn from '../pages/singIn/telaLogin';
 
-
-
-const Stack = createNativeStackNavigator(); 
+const Stack = createNativeStackNavigator();
 
 export default function Routes() {
   return (
+    
+      <Stack.Navigator>
 
-          <NavigationContainer>
-                    <Stack.Navigator> 
-                      <Stack.Screen 
-                        name="TelaInicial" 
-                        component={TelaInicial}
-                         options={{headerShown: false}}
-                       />
-         
-                       <Stack.Screen 
-                         name="PerfilUsuario" 
-                         component={PerfilUsuario}
-                         options={{
-                           title: 'SOBRE O PRODUTO',
-                           headerStyle: {
-                             backgroundColor: 'black',
-                           },
-                           headerTintColor: 'white',
-                           headerTitleStyle: {
-                             fontWeight: 'bold',
-                           },
-         
-                         }}
-                       />
-         
-                       <Stack.Screen 
-                         name="RelatorioGeral" 
-                         component={RelatorioGeral}
-                         options={{
-                           title: 'RELATÓRIO GERAL',
-                           headerStyle: {
-                             backgroundColor: 'black',
-                           },
-                           headerTintColor: 'white',
-                           headerTitleStyle: {
-                             fontWeight: 'bold',
-                           },
-         
-                         }}
-                       />
-                       <Stack.Screen 
-                         name="Welcome" 
-                         component={Welcome}
-                         options={{
-                           title: 'WELCOME',
-                           headerStyle: {
-                             backgroundColor: 'black',
-                           },
-                           headerTintColor: 'white',
-                           headerTitleStyle: {
-                             fontWeight: 'bold',
-                           },
-         
-                         }}
-                       />
-
-                       <Stack.Screen 
-                         name="sINGiN" 
-                         component={SingIn}
-                         options={{
-                           title: 'SingIn',
-                           headerStyle: {
-                             backgroundColor: 'black',
-                           },
-                           headerTintColor: 'white',
-                           headerTitleStyle: {
-                             fontWeight: 'bold',
-                           },
-         
-                         }}
-                       />
-         
-                  
-         
-                        
-                     </Stack.Navigator> 
-                  </NavigationContainer>
+<Stack.Screen
+          name="Welcome"
+          component={Welcome}
+          options={{
+            title: 'WELCOME',
+            headerStyle: { backgroundColor: 'black' },
+            headerTintColor: 'white',
+            headerTitleStyle: { fontWeight: 'bold' },
+            headerShown: false,  // Ocultar o cabeçalho se necessário
+          }}
+        />
+        
+        <Stack.Screen
+          name="TelaInicial"
+          component={TelaInicial}  // Passando o componente aqui
+          options={{ headerShown: false }}  // Caso queira ocultar o cabeçalho dessa tela
+        />
+        <Stack.Screen
+          name="PerfilUsuario"
+          component={PerfilUsuario}
+          options={{
+            title: 'SOBRE O PRODUTO',
+            headerStyle: { backgroundColor: 'black' },
+            headerTintColor: 'white',
+            headerTitleStyle: { fontWeight: 'bold' },
+          }}
+        />
+        <Stack.Screen
+          name="RelatorioGeral"
+          component={RelatorioGeral}
+          options={{
+            title: 'RELATÓRIO GERAL',
+            headerStyle: { backgroundColor: 'black' },
+            headerTintColor: 'white',
+            headerTitleStyle: { fontWeight: 'bold' },
+          }}
+        />
+       
+        <Stack.Screen
+          name="SignIn"
+          component={SingIn}
+          options={{
+            title: 'Sign In',
+            headerStyle: { backgroundColor: 'black' },
+            headerTintColor: 'white',
+            headerTitleStyle: { fontWeight: 'bold' },
+          }}
+        />
+      </Stack.Navigator>
+   
   );
 }
-
