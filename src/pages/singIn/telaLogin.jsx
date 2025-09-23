@@ -28,7 +28,8 @@ export default function SingIn() {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.buttonRegistrar}>
-            <Text style={styles.textRegistrar}>Não possui uma conta? Cadastre-se</Text>
+            <Text style={styles.textRegistrar}>Não possui uma conta?</Text>
+            <Text style={styles.textRegistrarCadastrar}>Cadastre-se</Text>
           </TouchableOpacity>
         </Animatable.View>
       </View>
@@ -63,12 +64,41 @@ const styles = StyleSheet.create({
   titulo:{
     fontSize: 20,
     marginTop: 28,
+     fontWeight: 'bold'
   },
   input:{
     borderBottomWidth: 1,
     height: 40,
     marginBottom:12,
-    fontSize: 16
+    fontSize: 16,
+    marginTop: 5
+  },
+  button: {
+    backgroundColor: '#8fbc8f',
+    width: '100%',
+    borderRadius: 4,
+    paddingVertical: 8,
+    marginTop: 14,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textButton:{
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold'
+  },
+  buttonRegistrar: {
+    marginTop: 14,
+    alignSelf: 'center',
+    flexDirection: 'row'
+  },
+  textRegistrar: {
+    color: '#a1a1A1',
+
+  },
+  textRegistrarCadastrar: {
+    color:'green',
+    marginLeft: 5,
   }
 })
 

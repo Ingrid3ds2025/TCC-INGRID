@@ -60,6 +60,7 @@ export default function Routes() {
             headerStyle: { backgroundColor: 'black' },
             headerTintColor: 'white',
             headerTitleStyle: { fontWeight: 'bold' },
+            headerShown: false,
           }}
         />
       </Stack.Navigator>
