@@ -1,9 +1,9 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import TelaInicial from '../telaInicial';  // Certifique-se de que o caminho está correto
-import PerfilUsuario from '../perfilUsuario';
-import RelatorioGeral from '../relatorioGeral';
+import TelaInicial from '../../src/pages/telas/telaInicial';  // Certifique-se de que o caminho está correto
+import PerfilUsuario from '../../src/pages/telas/perfilUsuario';
+import RelatorioGeral from '../../src/pages/telas/relatorioGeral';
 import Welcome from '../pages/welcome/bemVindo';
 import SingIn from '../pages/singIn/telaLogin';
 
