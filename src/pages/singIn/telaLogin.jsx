@@ -1,57 +1,84 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import * as Animatable from 'react-native-animatable';
+import { useNavigation } from '@react-navigation/native';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function SingIn() {
-    
-    return (
-      <View style={styles.container}> 
-        <Animatable.View animation='fadeInLeft' delay={500} style={styles.containerHeader}>
-          <Text style={styles.message}>Bem-vindo (a)!</Text>
-        </Animatable.View>
+  const navigation = useNavigation();
 
-        <Animatable.View animation='fadeInUp' delay={500} style={styles.containerForm}>
-          <Text style={styles.titulo}>Email</Text>
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+
+  function Cadastrar() {
+    navigation.navigate('CadastroUsuario');
+  }
+
+  function Acessar() {
+    navigation.navigate('TelaInicial');
+  }
+
+  return (
+    <View style={styles.container}>
+      <Animatable.View animation="fadeInLeft" delay={500} style={styles.containerHeader}>
+        <Text style={styles.message}>Bem-vindo (a)!</Text>
+      </Animatable.View>
+
+      <Animatable.View animation="fadeInUp" delay={500} style={styles.containerForm}>
+        <Text style={styles.titulo}>Email</Text>
+        <TextInput
+          placeholder="Digite um e-mail"
+          style={styles.input}
+        />
+
+        <Text style={styles.titulo}>Senha</Text>
+        <View style={styles.inputContainer}>
           <TextInput
-            placeholder='Digite um e-mail'
+            placeholder="Digite uma senha"
             style={styles.input}
+            secureTextEntry={!showPassword}
+            onChangeText={setPassword}
+            value={password}
           />
-
-          <Text style={styles.titulo}>Senha</Text>
-          <TextInput
-            placeholder='Digite uma senha'
-            style={styles.input}
-          />
-
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.textButton}>Acessar</Text>
+          <TouchableOpacity
+            onPress={() => setShowPassword(!showPassword)}
+            style={styles.iconContainer}
+          >
+            <Ionicons
+              name={showPassword ? 'eye-off' : 'eye'}
+              size={22}
+              color="gray"
+            />
           </TouchableOpacity>
+        </View>
 
-          <TouchableOpacity style={styles.buttonRegistrar}>
-            <Text style={styles.textRegistrar}>Não possui uma conta?</Text>
-            <Text style={styles.textRegistrarCadastrar}>Cadastre-se</Text>
-          </TouchableOpacity>
-        </Animatable.View>
-      </View>
-     
-    );
-  
+        <TouchableOpacity style={styles.button} onPress={Acessar}>
+          <Text style={styles.textButton}>Acessar</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.buttonRegistrar} onPress={Cadastrar}>
+          <Text style={styles.textRegistrar}>Não possui uma conta?</Text>
+          <Text style={styles.textRegistrarCadastrar}>Cadastre-se</Text>
+        </TouchableOpacity>
+      </Animatable.View>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#8fbc8f'
+    backgroundColor: '#8fbc8f',
   },
   containerHeader: {
-   marginTop: '15%',
-   marginBottom: '8%',
-   paddingStart: '5%'
+    marginTop: '15%',
+    marginBottom: '8%',
+    paddingStart: '5%',
   },
   message: {
     fontSize: 28,
     color: '#fff',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   containerForm: {
     backgroundColor: '#fff',
@@ -61,17 +88,27 @@ const styles = StyleSheet.create({
     paddingStart: '5%',
     paddingEnd: '5%',
   },
-  titulo:{
+  titulo: {
     fontSize: 20,
     marginTop: 28,
-     fontWeight: 'bold'
+    fontWeight: 'bold',
   },
-  input:{
+  inputContainer: {
+    position: 'relative',
+    justifyContent: 'center',
+  },
+  input: {
     borderBottomWidth: 1,
     height: 40,
-    marginBottom:12,
+    marginBottom: 12,
     fontSize: 16,
-    marginTop: 5
+    marginTop: 5,
+    paddingRight: 40, // espaço para o ícone do olho
+  },
+  iconContainer: {
+    position: 'absolute',
+    right: 10,
+    top: 10,
   },
   button: {
     backgroundColor: '#8fbc8f',
@@ -82,24 +119,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  textButton:{
+  textButton: {
     color: '#fff',
     fontSize: 18,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   buttonRegistrar: {
     marginTop: 14,
     alignSelf: 'center',
-    flexDirection: 'row'
+    flexDirection: 'row',
   },
   textRegistrar: {
     color: '#a1a1A1',
-
   },
   textRegistrarCadastrar: {
-    color:'green',
+    color: 'green',
     marginLeft: 5,
-  }
-})
-
-
+  },
+});

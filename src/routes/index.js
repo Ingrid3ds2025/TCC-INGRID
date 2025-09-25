@@ -6,6 +6,8 @@ import PerfilUsuario from '../../src/pages/telas/perfilUsuario';
 import RelatorioGeral from '../../src/pages/telas/relatorioGeral';
 import Welcome from '../pages/welcome/bemVindo';
 import SingIn from '../pages/singIn/telaLogin';
+import CadastroUsuario from '../pages/singIn/telaCadastro';
+
 
 const Stack = createNativeStackNavigator();
 
@@ -57,6 +59,18 @@ export default function Routes() {
           component={SingIn}
           options={{
             title: 'Sign In',
+            headerStyle: { backgroundColor: 'black' },
+            headerTintColor: 'white',
+            headerTitleStyle: { fontWeight: 'bold' },
+            headerShown: false,
+          }}
+        />
+
+        <Stack.Screen
+          name="CadastroUsuario"
+          component={CadastroUsuario}
+          options={{
+            title: 'Cadastrod de Usuario',
             headerStyle: { backgroundColor: 'black' },
             headerTintColor: 'white',
             headerTitleStyle: { fontWeight: 'bold' },
