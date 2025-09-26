@@ -1,21 +1,36 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Alert } from 'react-native';
 import * as Animatable from 'react-native-animatable';
 import { useNavigation } from '@react-navigation/native';
 import { Ionicons } from '@expo/vector-icons';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../pages/telas/firebaseConfig'; // ajuste o caminho conforme seu projeto
 
-export default function SingIn() {
+export default function SignIn() {
   const navigation = useNavigation();
 
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
-  function Cadastrar() {
-    navigation.navigate('CadastroUsuario');
+  async function Acessar() {
+    if (!email || !password) {
+      Alert.alert('Erro', 'Preencha email e senha');
+      return;
+    }
+
+    try {
+      await signInWithEmailAndPassword(auth, email, password);
+      Alert.alert('Sucesso', 'Login realizado!');
+      navigation.navigate('TelaInicial');
+    } catch (error) {
+      console.log('Erro ao logar:', error);
+      Alert.alert('Erro', error.message || 'Erro desconhecido ao fazer login');
+    }
   }
 
-  function Acessar() {
-    navigation.navigate('TelaInicial');
+  function Cadastrar() {
+    navigation.navigate('CadastroUsuario');
   }
 
   return (
@@ -29,6 +44,11 @@ export default function SingIn() {
         <TextInput
           placeholder="Digite um e-mail"
           style={styles.input}
+          onChangeText={setEmail}
+          value={email}
+          keyboardType="email-address"
+          autoCapitalize="none"
+          autoComplete="email"
         />
 
         <Text style={styles.titulo}>Senha</Text>
@@ -39,16 +59,11 @@ export default function SingIn() {
             secureTextEntry={!showPassword}
             onChangeText={setPassword}
             value={password}
+            autoCapitalize="none"
+            autoComplete="password"
           />
-          <TouchableOpacity
-            onPress={() => setShowPassword(!showPassword)}
-            style={styles.iconContainer}
-          >
-            <Ionicons
-              name={showPassword ? 'eye-off' : 'eye'}
-              size={22}
-              color="gray"
-            />
+          <TouchableOpacity onPress={() => setShowPassword(!showPassword)} style={styles.iconContainer}>
+            <Ionicons name={showPassword ? 'eye-off' : 'eye'} size={22} color="gray" />
           </TouchableOpacity>
         </View>
 
@@ -58,7 +73,7 @@ export default function SingIn() {
 
         <TouchableOpacity style={styles.buttonRegistrar} onPress={Cadastrar}>
           <Text style={styles.textRegistrar}>Não possui uma conta?</Text>
-          <Text style={styles.textRegistrarCadastrar}>Cadastre-se</Text>
+          <Text style={styles.textRegistrarCadastrar}> Cadastre-se</Text>
         </TouchableOpacity>
       </Animatable.View>
     </View>
