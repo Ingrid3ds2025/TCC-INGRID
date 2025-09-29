@@ -16,68 +16,70 @@ export default function Routes() {
     
       <Stack.Navigator>
 
-<Stack.Screen
-          name="Welcome"
-          component={Welcome}
-          options={{
-            title: 'WELCOME',
-            headerStyle: { backgroundColor: 'black' },
-            headerTintColor: 'white',
-            headerTitleStyle: { fontWeight: 'bold' },
-            headerShown: false,  // Ocultar o cabeçalho se necessário
-          }}
-        />
-        
-        <Stack.Screen
-          name="TelaInicial"
-          component={TelaInicial}  // Passando o componente aqui
-          options={{ headerShown: false }}  // Caso queira ocultar o cabeçalho dessa tela
-        />
-        <Stack.Screen
-          name="PerfilUsuario"
-          component={PerfilUsuario}
-          options={{
-            title: 'SOBRE O PRODUTO',
-            headerStyle: { backgroundColor: 'black' },
-            headerTintColor: 'white',
-            headerTitleStyle: { fontWeight: 'bold' },
-          }}
-        />
-        <Stack.Screen
-          name="RelatorioGeral"
-          component={RelatorioGeral}
-          options={{
-            title: 'RELATÓRIO GERAL',
-            headerStyle: { backgroundColor: 'black' },
-            headerTintColor: 'white',
-            headerTitleStyle: { fontWeight: 'bold' },
-          }}
-        />
-       
-        <Stack.Screen
-          name="SignIn"
-          component={SingIn}
-          options={{
-            title: 'Sign In',
-            headerStyle: { backgroundColor: 'black' },
-            headerTintColor: 'white',
-            headerTitleStyle: { fontWeight: 'bold' },
-            headerShown: false,
-          }}
-        />
+          <Stack.Screen
+            name="Welcome"
+            component={Welcome}
+            options={{
+              title: 'WELCOME',
+              headerStyle: { backgroundColor: 'black' },
+              headerTintColor: 'white',
+              headerTitleStyle: { fontWeight: 'bold' },
+              headerShown: false,  // Ocultar o cabeçalho se necessário
+            }}
+          />
+          
+          <Stack.Screen
+            name="TelaInicial"
+            component={TelaInicial}  // Passa o componente 
+            options={{ headerShown: false }}  // Caso queira ocultar o cabeçalho dessa tela
+          />
 
-        <Stack.Screen
-          name="CadastroUsuario"
-          component={CadastroUsuario}
-          options={{
-            title: 'Cadastrod de Usuario',
-            headerStyle: { backgroundColor: 'black' },
-            headerTintColor: 'white',
-            headerTitleStyle: { fontWeight: 'bold' },
-            headerShown: false,
-          }}
-        />
+          <Stack.Screen
+            name="PerfilUsuario"
+            component={PerfilUsuario}
+            options={{
+              title: 'SOBRE O PRODUTO',
+              headerStyle: { backgroundColor: 'black' },
+              headerTintColor: 'white',
+              headerTitleStyle: { fontWeight: 'bold' },
+            }}
+          />
+          
+          <Stack.Screen
+            name="RelatorioGeral"
+            component={RelatorioGeral}
+            options={{
+              title: 'RELATÓRIO GERAL',
+              headerStyle: { backgroundColor: 'black' },
+              headerTintColor: 'white',
+              headerTitleStyle: { fontWeight: 'bold' },
+            }}
+          />
+        
+          <Stack.Screen
+            name="SignIn"
+            component={SingIn}
+            options={{
+              title: 'Sign In',
+              headerStyle: { backgroundColor: 'black' },
+              headerTintColor: 'white',
+              headerTitleStyle: { fontWeight: 'bold' },
+              headerShown: false,
+            }}
+          />
+
+          <Stack.Screen
+            name="CadastroUsuario"
+            component={CadastroUsuario}
+            options={{
+              title: 'Cadastrod de Usuario',
+              headerStyle: { backgroundColor: 'black' },
+              headerTintColor: 'white',
+              headerTitleStyle: { fontWeight: 'bold' },
+              headerShown: false,
+            }}
+          />
       </Stack.Navigator>
-   
+    
   );
 }

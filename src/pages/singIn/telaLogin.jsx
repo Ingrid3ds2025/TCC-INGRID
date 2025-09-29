@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     fontSize: 16,
     marginTop: 5,
-    paddingRight: 40, // espaço para o ícone do olho
+    paddingRight: 40, 
   },
   iconContainer: {
     position: 'absolute',
