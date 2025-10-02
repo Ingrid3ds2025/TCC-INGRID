@@ -60,7 +60,7 @@ class TelaInicial extends Component {
           {/* Texto da temperatura */}
           <View style={styles.containerTemperatura}>
             <Text style={styles.textoTempo}>
-              Temperatura: {temperatura}°C 🌡️
+              Temperatura: {temperatura}°C 
             </Text>
              <Text style={styles.textoTempo}>
                {chuva ? "🌧️ Chovendo" : "☀️ Sem chuva"}

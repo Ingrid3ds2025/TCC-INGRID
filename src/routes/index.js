@@ -20,25 +20,25 @@ export default function Routes() {
             name="Welcome"
             component={Welcome}
             options={{
-              title: 'WELCOME',
+              title: 'BEM-VINDO',
               headerStyle: { backgroundColor: 'black' },
               headerTintColor: 'white',
               headerTitleStyle: { fontWeight: 'bold' },
-              headerShown: false,  // Ocultar o cabeçalho se necessário
+              headerShown: false,  
             }}
           />
           
           <Stack.Screen
             name="TelaInicial"
-            component={TelaInicial}  // Passa o componente 
-            options={{ headerShown: false }}  // Caso queira ocultar o cabeçalho dessa tela
+            component={TelaInicial}  
+            options={{ headerShown: false }}  
           />
 
           <Stack.Screen
             name="PerfilUsuario"
             component={PerfilUsuario}
             options={{
-              title: 'SOBRE O PRODUTO',
+              title: 'PERFIL',
               headerStyle: { backgroundColor: 'black' },
               headerTintColor: 'white',
               headerTitleStyle: { fontWeight: 'bold' },
@@ -60,7 +60,7 @@ export default function Routes() {
             name="SignIn"
             component={SingIn}
             options={{
-              title: 'Sign In',
+              title: 'LOGIN',
               headerStyle: { backgroundColor: 'black' },
               headerTintColor: 'white',
               headerTitleStyle: { fontWeight: 'bold' },
@@ -72,7 +72,7 @@ export default function Routes() {
             name="CadastroUsuario"
             component={CadastroUsuario}
             options={{
-              title: 'Cadastrod de Usuario',
+              title: 'CADASTRO DE USUÁRIO',
               headerStyle: { backgroundColor: 'black' },
               headerTintColor: 'white',
               headerTitleStyle: { fontWeight: 'bold' },

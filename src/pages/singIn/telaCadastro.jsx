@@ -12,6 +12,8 @@ import { useNavigation } from '@react-navigation/native';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { Ionicons } from '@expo/vector-icons';
 import { auth } from '../telas/firebaseConfig';
+import { updateProfile } from 'firebase/auth';
+
 
 export default function SignIn() {
   const navigation = useNavigation();
@@ -37,13 +39,21 @@ export default function SignIn() {
     }
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      // Atualiza o nome do usuário no perfil
+      await updateProfile(user, {
+        displayName: username,
+      });
+
       Alert.alert('Sucesso', 'Usuário cadastrado com sucesso!');
       navigation.navigate('TelaInicial');
     } catch (error) {
       Alert.alert('Erro ao cadastrar', error.message);
     }
   };
+
 
   return (
     <View style={styles.container}>

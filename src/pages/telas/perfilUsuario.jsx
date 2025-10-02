@@ -1,68 +1,78 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import {
+  View, Text, StyleSheet, Image, TextInput, TouchableOpacity, Alert,} from 'react-native';
+import { getAuth, updatePassword } from 'firebase/auth';
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
+ 
 
 class PerfilUsuario extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      nome: '',
+      email: '',
+    };
+  }
+
+  componentDidMount() {
+    const auth = getAuth();
+    const user = auth.currentUser;
+
+    if (user) {
+      this.setState({
+        nome: user.displayName || 'Usuário sem nome',
+        email: user.email,
+      });
+    }
+  }
+
   render() {
-    
+    const { nome, email } = this.state;
+
     return (
       <View style={styles.container}>
         <View style={styles.conteudo}>
-            <Image
-              source={require('../../../imagens/planta.png')}
-              style={{ width: 300, height: 300}}
-            />
-        </View>
+          <Image
+            source={require('../../../imagens/pngwing.com.png')}
+            style={{ width: 200, height: 200 }}
+          />
 
+          <Text style={styles.titulo}>{nome}</Text>
+          <Text style={styles.subtitulo}>{email}</Text>
+        </View>
       </View>
     );
   }
 }
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     backgroundColor: 'black',
-    padding: 10
+    padding: 10,
   },
-
-  conteudo:{
+  conteudo: {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'black',
     marginTop: 70,
-    marginBottom: 0
   },
-
   titulo: {
     color: 'white',
-    fontSize: 40,
+    fontSize: 30,
     fontWeight: '600',
     marginTop: 20,
-   
   },
-
-  subtitulo:{
+  subtitulo: {
     color: 'green',
-    fontSize: 25,
-    fontWeight: '700'
+    fontSize: 20,
+    fontWeight: '600',
+    marginBottom: 20,
   },
 
-  conteudo2:{
-    color: 'white',
-    marginTop: 5,
-    fontSize: 15,
-    marginBottom: 30
-  },
-
-  descricao:{
-    color: 'white',
-    marginTop: 5,
-    fontSize: 15,
-    marginLeft: 20
-  }
 });
 
 export default PerfilUsuario;
